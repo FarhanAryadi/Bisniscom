@@ -2,11 +2,31 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import LoginModal from './login/LoginModal';
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
+
+	const sidebarRef = useRef(null);
+
+	useEffect(() => {
+		function handleClickOutside(event: MouseEvent) {
+			if (
+				sidebarRef.current &&
+				(sidebarRef.current as HTMLElement).contains(event.target as Node)
+			) {
+				setIsOpen(false);
+			}
+		}
+		// Bind the event listener
+		document.addEventListener('click', handleClickOutside);
+		return () => {
+			// Unbind the event listener on clean up
+			document.removeEventListener('click', handleClickOutside);
+		};
+	}, [sidebarRef, setIsOpen]);
+
 	const Menu = [
 		{
 			id: 1,
@@ -36,7 +56,7 @@ const Header = () => {
 		left: isOpen ? 0 : '-100%',
 		width: '10%',
 		height: '100vh',
-		background: 'gray',
+		background: '#414245',
 		transition: 'right 0.3s ease-in-out',
 		display: 'flex',
 		flexDirection: 'column',
@@ -80,7 +100,7 @@ const Header = () => {
 				</div>
 			</nav>
 			{isOpen && (
-				<div style={sidebarStyle}>
+				<div style={sidebarStyle} ref={sidebarRef}>
 					<div style={closeIconStyle} onClick={() => setIsOpen(false)}>
 						{/* Replace this with your hamburger icon */}
 						<svg
