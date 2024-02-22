@@ -30,9 +30,13 @@ const UpdateModal = () => {
 							placeholder="New Email"
 						/>
 					</label>
-					<label className="label text-black">
+					<label className="label text-white">
 						Date
-						<input className="input ml-20" type="date" placeholder="date" />
+						<input
+							className="input ml-20 text-slate-400"
+							type="date"
+							placeholder="date"
+						/>
 					</label>
 					<button className="btn btn-info mt-4 mx-2" type="submit">
 						Close

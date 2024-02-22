@@ -22,7 +22,7 @@ const PricingPage = () => {
 	return (
 		<>
 			<div className="overflow-x-auto my-5">
-				<table className="table table-zebra w-1/2 mx-auto">
+				<table className="table table-pin-cols w-1/2 mx-auto bg-gray-500 text-black">
 					{/* head */}
 					<thead>
 						<tr>
@@ -34,22 +34,22 @@ const PricingPage = () => {
 					</thead>
 					<tbody>
 						{/* row 1 */}
-						<tr className="bg-base-200">
-							<th>1</th>
+						<tr>
+							<td>1</td>
 							<td>Cy Ganderton</td>
 							<td>Quality Control Specialist</td>
 							<td>Blue</td>
 						</tr>
 						{/* row 2 */}
 						<tr>
-							<th>2</th>
+							<td>2</td>
 							<td>Hart Hagerty</td>
 							<td>Desktop Support Technician</td>
 							<td>Purple</td>
 						</tr>
 						{/* row 3 */}
 						<tr>
-							<th>3</th>
+							<td>3</td>
 							<td>Brice Swyre</td>
 							<td>Tax Accountant</td>
 							<td>Red</td>
@@ -58,7 +58,7 @@ const PricingPage = () => {
 				</table>
 			</div>
 			<div className="overflow-x-auto py-4">
-				<table className="table table-pin-cols w-1/2 mx-auto">
+				<table className="table table-pin-cols w-1/2 mx-auto bg-gray-500 text-black">
 					<thead>
 						<tr>
 							<th>No</th>
