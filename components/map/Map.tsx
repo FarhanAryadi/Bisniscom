@@ -14,7 +14,7 @@ export function ChangeView({ coords }: { coords: LatLngTuple }) {
 }
 
 export default function Map() {
-	const [geoData, setGeoData] = useState({ lat: -6.2, lng: 106.816666 });
+	const [geoData, setGeoData] = useState({ lat: 31.5, lng: 34.46667 });
 
 	// Define the center of the map
 	const center = [geoData.lat, geoData.lng];
