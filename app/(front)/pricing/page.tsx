@@ -5,7 +5,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const PricingPage = () => {
-	const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5600';
+	const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 	const [users, setUsers] = useState<User[]>([]);
 
 	// fetch products
