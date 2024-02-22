@@ -8,7 +8,7 @@ const revalidate = 3600;
 const getLatest = cache(async () => {
 	const products = await prisma.product.findMany({
 		orderBy: {
-			id: 'desc',
+			createdAt: 'desc',
 		},
 		take: 8,
 	});
