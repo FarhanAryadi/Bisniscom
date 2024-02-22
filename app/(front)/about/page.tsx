@@ -1,7 +1,5 @@
 import Map from '@/components/map/Map';
-import { User } from '@prisma/client';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const AboutPage = () => {
 	return (

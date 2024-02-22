@@ -1,12 +1,12 @@
 import { Product } from '@prisma/client';
-import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 export default function ProductItem({ product }: { product: Product }) {
 	return (
 		<div className="card bg-base-300 shadow-xl mb-4">
+			{/* figure to hold the product image (start) */}
 			<figure>
 				<Link href={`/products/${product.slug}`}>
 					<Image
@@ -18,6 +18,9 @@ export default function ProductItem({ product }: { product: Product }) {
 					/>
 				</Link>
 			</figure>
+			{/* figure to hold the product image (end) */}
+
+			{/* Product card */}
 			<div className="card-body">
 				<Link href={`/products/${product.slug}`}>
 					<h2 className="card-title font-normal">{product.name}</h2>
@@ -29,6 +32,7 @@ export default function ProductItem({ product }: { product: Product }) {
 					</Link>
 				</div>
 			</div>
+			{/* end */}
 		</div>
 	);
 }

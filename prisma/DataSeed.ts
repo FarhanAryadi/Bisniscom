@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 
 const prisma = new PrismaClient();
 
+// asynchronous function to create users
 async function createUser() {
 	await prisma.user.createMany({
 		data: [
@@ -40,6 +41,8 @@ async function createUser() {
 		skipDuplicates: true, // Skip 'Bobo'
 	});
 }
+
+// asynchronous function to create products
 async function createProduct() {
 	await prisma.product.createMany({
 		data: [

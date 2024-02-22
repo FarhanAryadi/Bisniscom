@@ -1,3 +1,5 @@
+// note: not using this file anymore
+
 import bcrypt from 'bcryptjs';
 
 const data = {

@@ -2,11 +2,13 @@
 
 import { LatLngTuple } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
 
 export function ChangeView({ coords }: { coords: LatLngTuple }) {
+	// Get the map instance using the useMap hook
 	const map = useMap();
+	// Set the view of the map to the given coordinates
 	map.setView(coords, 12);
 	return null;
 }
@@ -14,9 +16,11 @@ export function ChangeView({ coords }: { coords: LatLngTuple }) {
 export default function Map() {
 	const [geoData, setGeoData] = useState({ lat: -6.2, lng: 106.816666 });
 
+	// Define the center of the map
 	const center = [geoData.lat, geoData.lng];
 
 	return (
+		// Map component with the center and zoom props
 		<div
 			style={{
 				display: 'flex',

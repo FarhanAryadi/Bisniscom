@@ -4,22 +4,29 @@ import React, { useState } from 'react';
 import UpdateModal from './UpdateModal';
 
 const LoginModal = () => {
+	// state variables for showing the login form and the modal
 	const [showLoginForm, setShowLoginForm] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 
+	// function to handle form submission
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+		// Prevent the default form submission behavior
 		event.preventDefault();
 		setShowModal(true);
 	};
 
 	return (
 		<div className="relative">
+			{/* Button to toggle the login form (start) */}
 			<button
 				className="btn btn-outline btn-warning"
 				onClick={() => setShowLoginForm(!showLoginForm)}
 			>
 				Login
 			</button>
+			{/* Button to toggle the login form (end) */}
+
+			{/* Login form shown when showLoginForm is true (start) */}
 			{showLoginForm && (
 				<form
 					className="absolute right-0 bg-white p-2 shadow-lg z-10 mt-2 rounded-md"
@@ -34,7 +41,9 @@ const LoginModal = () => {
 					</button>
 				</form>
 			)}
+			{/* Login form shown when showLoginForm is true (end) */}
 
+			{/* Modal shown when showModal is true */}
 			{showModal && <UpdateModal />}
 		</div>
 	);

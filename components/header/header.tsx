@@ -7,9 +7,10 @@ import LoginModal from './login/LoginModal';
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
-
+	// ref for the sidebar
 	const sidebarRef = useRef(null);
 
+	// Use an effect to add an event listener for clicks outside the sidebar
 	useEffect(() => {
 		function handleClickOutside(event: MouseEvent) {
 			if (
@@ -27,6 +28,7 @@ const Header = () => {
 		};
 	}, [sidebarRef, setIsOpen]);
 
+	// Define the menu items
 	const Menu = [
 		{
 			id: 1,
@@ -50,6 +52,7 @@ const Header = () => {
 		},
 	];
 
+	// style for the sidebar and close icon
 	const sidebarStyle = {
 		position: 'fixed',
 		top: 0,
@@ -74,8 +77,10 @@ const Header = () => {
 	return (
 		<header>
 			<nav>
+				{/* Header background */}
 				<div className="flex items-center justify-between p-4 shadow-sm bg-neutral-800">
 					<div className="flex items-center gap-14 w-full">
+						{/* Bisnis.com Logo */}
 						<button onClick={() => setIsOpen(!isOpen)}>
 							<Image
 								src="/logo-bisnis.png"
@@ -84,7 +89,8 @@ const Header = () => {
 								height={80}
 							/>
 						</button>
-						{/* <Image src="/logo-bisnis.png" alt="logo" width={180} height={80} /> */}
+
+						{/* Menu  (start) */}
 						<ul className="md:flex gap-20 hidden">
 							{Menu.map((item, index) => (
 								<Link href={item.path} key={index}>
@@ -94,15 +100,18 @@ const Header = () => {
 								</Link>
 							))}
 						</ul>
+						{/* Menu  (end) */}
 					</div>
+					{/* Login button */}
 					<div className="flex items-center"></div>
 					<LoginModal />
 				</div>
 			</nav>
+			{/* Sidebar start */}
 			{isOpen && (
 				<div style={sidebarStyle} ref={sidebarRef}>
 					<div style={closeIconStyle} onClick={() => setIsOpen(false)}>
-						{/* Replace this with your hamburger icon */}
+						{/* the bars icon to close the sidebar (start) */}
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
@@ -118,6 +127,9 @@ const Header = () => {
 							/>
 						</svg>
 					</div>
+					{/* the bars icon to close the sidebar (end) */}
+
+					{/* Menu items */}
 					<ul>
 						{Menu.map((item, index) => (
 							<Link href={item.path} key={index}>

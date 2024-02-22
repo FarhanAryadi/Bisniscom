@@ -2,7 +2,8 @@ import React from 'react';
 
 const UpdateModal = () => {
 	return (
-		<div className="fixed inset-0 flex justify-center items-center bg-gray-500 bg-opacity-50 z-50">
+		<div className="fixed inset-0 flex justify-center items-center bg-opacity-50 z-50">
+			{/* Form login*/}
 			<div className="bg-white p-4 rounded shadow-lg">
 				<form>
 					<label className="label text-black">
