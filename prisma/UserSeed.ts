@@ -16,6 +16,26 @@ async function main() {
 				password: bcrypt.hashSync('123456'),
 				isAdmin: false,
 			},
+			{
+				createdAt: new Date(),
+				updatedAt: new Date(),
+				name: 'Alice',
+				firtName: 'Alice',
+				lastName: 'Bordeland',
+				email: 'alice@gmail.com',
+				password: bcrypt.hashSync('123456'),
+				isAdmin: false,
+			},
+			{
+				createdAt: new Date(),
+				updatedAt: new Date(),
+				name: 'Joko',
+				firtName: 'Joko',
+				lastName: 'Bryan',
+				email: 'joko@gmail.com',
+				password: bcrypt.hashSync('123456'),
+				isAdmin: false,
+			},
 		],
 		skipDuplicates: true, // Skip 'Bobo'
 	});
