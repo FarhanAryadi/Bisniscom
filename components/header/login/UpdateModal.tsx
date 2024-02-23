@@ -41,10 +41,18 @@ const UpdateModal = () => {
 					<button className="btn btn-info mt-4 mx-2" type="submit">
 						Close
 					</button>
-					<button className="btn btn-error mt-4 mx-2" type="submit">
+					<button
+						className="btn btn-error mt-4 mx-2"
+						type="submit"
+						onClick={() => alert('Data deleted!')}
+					>
 						Delete
 					</button>
-					<button className="btn btn-success mt-4 mx-2" type="submit">
+					<button
+						className="btn btn-success mt-4 mx-2"
+						type="submit"
+						onClick={() => alert('Data updated!')}
+					>
 						Update
 					</button>
 				</form>
