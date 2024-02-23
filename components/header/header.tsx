@@ -59,7 +59,7 @@ const Header = () => {
 		left: isOpen ? 0 : '-100%',
 		width: '10%',
 		height: '100vh',
-		background: '#414245',
+		background: '#E9F6FF',
 		transition: 'right 0.3s ease-in-out',
 		display: 'flex',
 		flexDirection: 'column',
@@ -78,7 +78,7 @@ const Header = () => {
 		<header>
 			<nav>
 				{/* Header background */}
-				<div className="flex items-center justify-between p-4 shadow-sm bg-neutral-800">
+				<div className="flex items-center justify-between p-4 shadow-sm bg-whitebig">
 					<div className="flex items-center gap-14 w-full">
 						{/* Bisnis.com Logo */}
 						<button onClick={() => setIsOpen(!isOpen)}>
@@ -94,7 +94,7 @@ const Header = () => {
 						<ul className="md:flex gap-20 hidden">
 							{Menu.map((item, index) => (
 								<Link href={item.path} key={index}>
-									<li className="hover:text-primary cursor-pointer hover:scale-105 transition-all ease-in-out">
+									<li className="hover:text-bluebig cursor-pointer hover:scale-105 transition-all ease-in-out text-navybig font-bold">
 										{item.name}
 									</li>
 								</Link>
@@ -118,7 +118,7 @@ const Header = () => {
 							viewBox="0 0 24 24"
 							strokeWidth={1.5}
 							stroke="currentColor"
-							className="w-6 h-6"
+							className="w-6 h-6 text-navybig"
 						>
 							<path
 								strokeLinecap="round"
@@ -134,7 +134,7 @@ const Header = () => {
 						{Menu.map((item, index) => (
 							<Link href={item.path} key={index}>
 								<li
-									className="hover:text-primary cursor-pointer hover:scale-105 transition-all ease-in-out ml-10 my-12 mt-16"
+									className="hover:text-primary cursor-pointer hover:scale-105 transition-all ease-in-out ml-10 my-12 mt-16 text-navybig font-bold"
 									onClick={() => setIsOpen(false)}
 								>
 									{item.name}

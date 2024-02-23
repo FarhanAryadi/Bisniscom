@@ -5,7 +5,7 @@ import React from 'react';
 
 export default function ProductItem({ product }: { product: Product }) {
 	return (
-		<div className="card bg-base-300 shadow-xl mb-4">
+		<div className="card shadow-xl mb-4 bg-navybig">
 			{/* figure to hold the product image (start) */}
 			<figure>
 				<Link href={`/products/${product.slug}`}>
@@ -21,9 +21,9 @@ export default function ProductItem({ product }: { product: Product }) {
 			{/* figure to hold the product image (end) */}
 
 			{/* Product card */}
-			<div className="card-body">
+			<div className="card-body bg-navybig">
 				<Link href={`/products/${product.slug}`}>
-					<h2 className="card-title font-normal">{product.name}</h2>
+					<h2 className="card-title font-bold text-whitebig">{product.name}</h2>
 				</Link>
 				<p className="mb-2">{product.description}</p>
 				<div className="card-actions flex items-center justify-between">
