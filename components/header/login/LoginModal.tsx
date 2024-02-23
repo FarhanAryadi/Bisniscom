@@ -19,7 +19,7 @@ const LoginModal = () => {
 		<div className="relative">
 			{/* Button to toggle the login form (start) */}
 			<button
-				className="btn btn-outline btn-warning"
+				className="btn btn-outline text-navybig"
 				onClick={() => setShowLoginForm(!showLoginForm)}
 			>
 				Login
